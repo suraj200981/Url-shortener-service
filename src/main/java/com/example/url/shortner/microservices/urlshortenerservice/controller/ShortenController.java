@@ -33,6 +33,8 @@ public class ShortenController {
 
         urlRepository.save(urlDTToSave);
         log.info("Url saved in database");
+        //send url to redirect service
+        log.info("Url sent to redirect-service");
 
     }
 
