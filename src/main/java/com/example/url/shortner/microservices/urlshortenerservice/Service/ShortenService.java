@@ -27,6 +27,7 @@ public class ShortenService {
             return urlDTO.getOriginalUrl() + "/" + generatedString;
         } else {
             log.info("Url shortened successfully");
+
             return urlDTO.getPrefix() + urlDTO.getOriginalUrl() + "/" + generatedString;
         }
     }
