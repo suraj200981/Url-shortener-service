@@ -22,13 +22,8 @@ public class ShortenService {
         for (int x = 0; x < 5; x++) {
             generatedString.append(alphaNumericString.charAt(new Random().nextInt(alphaNumericString.length())));
         }
-        if (urlDTO.getPrefix().isEmpty()) {
             log.info("Url shortened successfully");
-            return urlDTO.getOriginalUrl() + "/" + generatedString;
-        } else {
-            log.info("Url shortened successfully");
+            return "localhost:8080" + "/" + generatedString;
 
-            return urlDTO.getPrefix() + urlDTO.getOriginalUrl() + "/" + generatedString;
-        }
     }
 }
