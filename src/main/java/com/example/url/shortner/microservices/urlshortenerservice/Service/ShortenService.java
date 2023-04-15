@@ -1,9 +1,12 @@
 package com.example.url.shortner.microservices.urlshortenerservice.Service;
 
 import com.example.url.shortner.microservices.urlshortenerservice.model.UrlDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
+
+@Slf4j
 
 @Service
 public class ShortenService {
@@ -14,16 +17,17 @@ public class ShortenService {
             + "abcdefghijklmnopqrstuvxyz";
 
     public String shortenUrl(UrlDTO urlDTO) {
-        StringBuilder generatedString= new StringBuilder();
+        StringBuilder generatedString = new StringBuilder();
 
-        for(int x=0; x<5; x++){
+        for (int x = 0; x < 5; x++) {
             generatedString.append(alphaNumericString.charAt(new Random().nextInt(alphaNumericString.length())));
         }
-        if(urlDTO.getPrefix().isEmpty()){
-            return urlDTO.getOriginalUrl()+ "/"+generatedString;
-        }else{
-            return urlDTO.getPrefix()+urlDTO.getOriginalUrl()+"/"+generatedString;
+        if (urlDTO.getPrefix().isEmpty()) {
+            log.info("Url shortened successfully");
+            return urlDTO.getOriginalUrl() + "/" + generatedString;
+        } else {
+            log.info("Url shortened successfully");
+            return urlDTO.getPrefix() + urlDTO.getOriginalUrl() + "/" + generatedString;
         }
     }
-
 }

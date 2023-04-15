@@ -9,18 +9,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@Slf4j
 @RestController
 public class ShortenController {
 
 
     @Autowired
     ShortenService shortenService;
+
     @PostMapping("/shorten")
-    public void shortenUrl(@RequestBody UrlDTO urlDTO){
-//        System.out.println("Original url received: "+ urlDTO.getOriginalUrl());
-//        System.out.println("Prefix received: "+ urlDTO.getPrefix());
+    public void shortenUrl(@RequestBody UrlDTO urlDTO) {
         System.out.println(shortenService.shortenUrl(urlDTO));
+
     }
 
 }
