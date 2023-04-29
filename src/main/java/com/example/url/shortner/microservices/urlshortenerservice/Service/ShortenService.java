@@ -23,7 +23,7 @@ public class ShortenService {
             generatedString.append(alphaNumericString.charAt(new Random().nextInt(alphaNumericString.length())));
         }
             log.info("Url shortened successfully");
-            return "localhost:8080" + "/" + generatedString;
+            return "localhost:8200" + "/" + generatedString;
 
     }
 }
