@@ -18,12 +18,10 @@ public class ShortenService {
 
     public String shortenUrl(UrlDTO urlDTO) {
         StringBuilder generatedString = new StringBuilder();
-
         for (int x = 0; x < 5; x++) {
             generatedString.append(alphaNumericString.charAt(new Random().nextInt(alphaNumericString.length())));
         }
             log.info("Url shortened successfully");
             return "localhost:8200" + "/" + generatedString;
-
     }
 }
